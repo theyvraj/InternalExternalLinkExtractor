@@ -48,8 +48,7 @@ def crawl_internal_links(start_url, max_links=100):
                 try:
                     response = requests.get(current_link, timeout=10)
                     status_code = response.status_code
-                    visited_links.append({'link': current_link, 'status_code': status_code})
-                    
+                    visited_links.append({'link': current_link, 'status_code': status_code})                    
                     new_internal_links, new_external_links = get_internal_links(current_link, domain)
                     links_to_visit.update(new_internal_links - {link_info['link'] for link_info in visited_links})
                     all_external_links.update(new_external_links)
