@@ -13,7 +13,7 @@ def get_internal_links(url, domain):
         for link in soup.find_all('a', href=True):
             href = link.get('href')
             full_url = urllib.parse.urljoin(domain, href)
-            if urllib.parse.urlparse(full_url).netloc == urllib.parse.urlparse(domain).netloc:
+            if domain in full_url:
                 internal_links.add(full_url)
             else:
                 external_links.add(full_url)
@@ -24,7 +24,7 @@ def get_internal_links(url, domain):
 
 def crawl_internal_links(start_url, max_links=100):
     print(f"Starting crawl from: {start_url}")
-    domain = urllib.parse.urlparse(start_url).scheme + "://" + urllib.parse.urlparse(start_url).netloc
+    domain = start_url
     visited_links = []
     all_external_links = set()
     links_to_visit = set()

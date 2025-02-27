@@ -10,3 +10,4 @@ wheels/
 .venv
 external_links.txt
 internal_links.txt
+testing/
