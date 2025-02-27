@@ -140,12 +140,8 @@ def save_links_to_files(internal_links, external_links):
 if __name__ == "__main__":
     start_url = str(input('Enter the URL to you want to scrap : '))
     try:
-        t1 = threading.Thread(target=crawl_internal_links, args=(start_url,), kwargs={'max_links': 50})
-        t2 = threading.Thread(target=save_links_to_files, args=t1)
-        t1.start()
-        t2.start()
-        t1.join()
-        t2.join()
+        internal_links, external_links = crawl_internal_links(start_url, max_links=50)
+        save_links_to_files(internal_links, external_links)
     except Exception as e:
         print(f"An error occurred during execution: {e}")
         save_links_to_files([], [])
