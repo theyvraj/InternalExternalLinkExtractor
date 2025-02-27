@@ -93,7 +93,7 @@ def save_links_to_files(internal_links, external_links):
         print(f"Error saving external links: {e}")
 
 if __name__ == "__main__":
-    start_url = 'https://portyourdoc.com/'
+    start_url = str(input('Enter the URL to you want to scrap : '))
     try:
         all_internal_links, all_external_links = crawl_internal_links(start_url, max_links=50)
         save_links_to_files(all_internal_links, all_external_links)
