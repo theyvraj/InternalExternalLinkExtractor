@@ -10,3 +10,5 @@ wheels/
 .venv
 external_links.txt
 internal_links.txt
+testing/external_links.json
+testing/internal_links.json
