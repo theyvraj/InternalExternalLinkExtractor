@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import urllib.parse
 import time
 import os
-
+import json
 def get_internal_links(url, domain):
     internal_links = set()
     external_links = set()
@@ -13,7 +13,8 @@ def get_internal_links(url, domain):
         soup = BeautifulSoup(response.text, 'html.parser')
         for link in soup.find_all('a', href=True):
             href = link.get('href')
-            
+            if '#' in href:
+                continue            
             anchor_text = link.get_text().strip() or "[No Text]"
             full_url = urllib.parse.urljoin(domain, href)
             if domain in full_url:
@@ -112,35 +113,40 @@ def crawl_internal_links(start_url, max_links=100):
 
 def save_links_to_files(internal_links, external_links):
     output_dir = os.path.dirname(os.path.abspath(__file__))
-    internal_file_path = os.path.join(output_dir, 'internal_links.txt')
+    internal_links_dict = {}
+    for i, link_info in enumerate(internal_links, 1):
+        internal_links_dict[f"link_{i}"] = {
+            "url": link_info['link'],
+            "status_code": link_info['status_code'],
+            "anchor_text": link_info['anchor_text'],
+            "found_on": link_info['source_url']
+        }
+    internal_file_path = os.path.join(output_dir, 'internal_links.json')
     try:
         with open(internal_file_path, 'w', encoding='utf-8') as file:
             if not internal_links:
-                file.write("No internal links found.\n")
+                json.dump({"message": "No internal links found."}, file, indent=4)
             else:
-                for i, link_info in enumerate(internal_links, 1):
-                    file.write(f"Link {i}:\n")
-                    file.write(f"  URL: {link_info['link']}\n")
-                    file.write(f"  Status Code: {link_info['status_code']}\n")
-                    file.write(f"  Anchor Text: {link_info['anchor_text']}\n")
-                    file.write(f"  Found on: {link_info['source_url']}\n")
-                    file.write("\n")
+                json.dump(internal_links_dict, file, indent=4)
         print(f"Internal links saved to: {internal_file_path}")
     except Exception as e:
         print(f"Error saving internal links: {e}")
-    external_file_path = os.path.join(output_dir, 'external_links.txt')
+    unique_external_links = set(external_links)
+    external_links_dict = {}
+    for i, link_tuple in enumerate(unique_external_links, 1):
+        link_url, anchor_text, source_url = link_tuple
+        external_links_dict[f"link_{i}"] = {
+            "url": link_url,
+            "anchor_text": anchor_text,
+            "found_on": source_url
+        }
+    external_file_path = os.path.join(output_dir, 'external_links.json')
     try:
         with open(external_file_path, 'w', encoding='utf-8') as file:
-            if not external_links:
-                file.write("No external links found.\n")
+            if not unique_external_links:
+                json.dump({"message": "No external links found."}, file, indent=4)
             else:
-                for i, link_tuple in enumerate(external_links, 1):
-                    link_url, anchor_text, source_url = link_tuple
-                    file.write(f"Link {i}:\n")
-                    file.write(f"  URL: {link_url}\n")
-                    file.write(f"  Anchor Text: {anchor_text}\n")
-                    file.write(f"  Found on: {source_url}\n")
-                    file.write("\n")
+                json.dump(external_links_dict, file, indent=4)
         print(f"External links saved to: {external_file_path}")
     except Exception as e:
         print(f"Error saving external links: {e}")

@@ -1,0 +1,152 @@
+{
+    "link_1": {
+        "url": "https://portyourdoc.com/",
+        "status_code": 200,
+        "anchor_text": "Start URL",
+        "found_on": "N/A"
+    },
+    "link_2": {
+        "url": "https://portyourdoc.com/compress-pdf",
+        "status_code": 200,
+        "anchor_text": "Compress PDF",
+        "found_on": "https://portyourdoc.com/"
+    },
+    "link_3": {
+        "url": "https://portyourdoc.com/pdf-to-doc",
+        "status_code": 200,
+        "anchor_text": "PDF to DOC",
+        "found_on": "https://portyourdoc.com/compress-pdf"
+    },
+    "link_4": {
+        "url": "https://portyourdoc.com/transcribe-audio",
+        "status_code": 200,
+        "anchor_text": "Audio Transcription",
+        "found_on": "https://portyourdoc.com/pdf-to-doc"
+    },
+    "link_5": {
+        "url": "https://portyourdoc.com/merge-pdf",
+        "status_code": 200,
+        "anchor_text": "Merge PDF",
+        "found_on": "https://portyourdoc.com/transcribe-audio"
+    },
+    "link_6": {
+        "url": "https://portyourdoc.com/all-tools/",
+        "status_code": 200,
+        "anchor_text": "All Tools",
+        "found_on": "https://portyourdoc.com/merge-pdf"
+    },
+    "link_7": {
+        "url": "https://portyourdoc.com/extract-assets",
+        "status_code": 200,
+        "anchor_text": "Extract Assests",
+        "found_on": "https://portyourdoc.com/all-tools/"
+    },
+    "link_8": {
+        "url": "https://portyourdoc.com/contact-us",
+        "status_code": 200,
+        "anchor_text": "Get Connected Now!",
+        "found_on": "https://portyourdoc.com/"
+    },
+    "link_9": {
+        "url": "https://portyourdoc.com/split-pdf",
+        "status_code": 200,
+        "anchor_text": "Split PDF",
+        "found_on": "https://portyourdoc.com/contact-us"
+    },
+    "link_10": {
+        "url": "https://portyourdoc.com/conditions/",
+        "status_code": 200,
+        "anchor_text": "Terms & Conditions",
+        "found_on": "https://portyourdoc.com/split-pdf"
+    },
+    "link_11": {
+        "url": "https://portyourdoc.com/contact-us/",
+        "status_code": 200,
+        "anchor_text": "Contact Us",
+        "found_on": "https://portyourdoc.com/conditions/"
+    },
+    "link_12": {
+        "url": "https://portyourdoc.com/blogs/",
+        "status_code": 200,
+        "anchor_text": "Blogs",
+        "found_on": "https://portyourdoc.com/contact-us/"
+    },
+    "link_13": {
+        "url": "https://portyourdoc.com/text-to-speech",
+        "status_code": 200,
+        "anchor_text": "Text to Speech",
+        "found_on": "https://portyourdoc.com/blogs/"
+    },
+    "link_14": {
+        "url": "https://portyourdoc.com/unlock-pdf",
+        "status_code": 200,
+        "anchor_text": "Unlock PDF",
+        "found_on": "https://portyourdoc.com/text-to-speech"
+    },
+    "link_15": {
+        "url": "https://portyourdoc.com/pdf-to-jpg",
+        "status_code": 200,
+        "anchor_text": "PDF to JPG",
+        "found_on": "https://portyourdoc.com/unlock-pdf"
+    },
+    "link_16": {
+        "url": "https://portyourdoc.com/post/how-do-you-optimize-your-raw-images-for-the-web-using-webp-format/",
+        "status_code": 200,
+        "anchor_text": "Read More",
+        "found_on": "https://portyourdoc.com/blogs/"
+    },
+    "link_17": {
+        "url": "https://portyourdoc.com/protect-pdf",
+        "status_code": 200,
+        "anchor_text": "Protect PDF",
+        "found_on": "https://portyourdoc.com/post/how-do-you-optimize-your-raw-images-for-the-web-using-webp-format/"
+    },
+    "link_18": {
+        "url": "https://portyourdoc.com/post/why-you-should-convert-tiff-to-gif-for-web-usage/",
+        "status_code": 200,
+        "anchor_text": "Read More",
+        "found_on": "https://portyourdoc.com/blogs/"
+    },
+    "link_19": {
+        "url": "https://portyourdoc.com/policies/",
+        "status_code": 200,
+        "anchor_text": "Privacy Policy",
+        "found_on": "https://portyourdoc.com/post/why-you-should-convert-tiff-to-gif-for-web-usage/"
+    },
+    "link_20": {
+        "url": "https://portyourdoc.com/tiff-to-gif/",
+        "status_code": 200,
+        "anchor_text": "Tiff to GIF",
+        "found_on": "https://portyourdoc.com/post/why-you-should-convert-tiff-to-gif-for-web-usage/"
+    },
+    "link_21": {
+        "url": "https://portyourdoc.com/post/best-tools-to-easily-convert-tiff-to-webp-features-and-comparisons/",
+        "status_code": 200,
+        "anchor_text": "Best Tools to Easily Convert TIFF to WebP Image Format",
+        "found_on": "https://portyourdoc.com/blogs/"
+    },
+    "link_22": {
+        "url": "https://portyourdoc.com/tiff-to-webp/",
+        "status_code": 200,
+        "anchor_text": "Convert TIFF to WebP",
+        "found_on": "https://portyourdoc.com/post/best-tools-to-easily-convert-tiff-to-webp-features-and-comparisons/"
+    },
+    "link_23": {
+        "url": "https://portyourdoc.com/post/how-to-convert-raw-to-png-a-complete-guide-for-beginners/",
+        "status_code": 200,
+        "anchor_text": "Convert RAW to PNG: A Complete Guide for Beginners",
+        "found_on": "https://portyourdoc.com/blogs/"
+    },
+    "link_24": {
+        "url": "https://portyourdoc.com/raw-to-webp/",
+        "status_code": 200,
+        "anchor_text": "RAW to WebP",
+        "found_on": "https://portyourdoc.com/post/how-do-you-optimize-your-raw-images-for-the-web-using-webp-format/"
+    },
+    "link_25": {
+        "url": "https://portyourdoc.com/raw-to-png/",
+        "status_code": 200,
+        "anchor_text": "RAW to PNG",
+        "found_on": "https://portyourdoc.com/post/how-to-convert-raw-to-png-a-complete-guide-for-beginners/"
+    }
+}
