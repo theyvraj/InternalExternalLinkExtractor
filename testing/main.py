@@ -4,6 +4,7 @@ import urllib.parse
 import time
 import os
 import json
+import threading
 def get_internal_links(url, domain):
     internal_links = set()
     external_links = set()
@@ -139,8 +140,12 @@ def save_links_to_files(internal_links, external_links):
 if __name__ == "__main__":
     start_url = str(input('Enter the URL to you want to scrap : '))
     try:
-        all_internal_links, all_external_links = crawl_internal_links(start_url, max_links=50)
-        save_links_to_files(all_internal_links, all_external_links)
+        t1 = threading.Thread(target=crawl_internal_links, args=(start_url,), kwargs={'max_links': 50})
+        t2 = threading.Thread(target=save_links_to_files, args=t1)
+        t1.start()
+        t2.start()
+        t1.join()
+        t2.join()
     except Exception as e:
         print(f"An error occurred during execution: {e}")
         save_links_to_files([], [])
