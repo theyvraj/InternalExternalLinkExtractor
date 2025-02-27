@@ -54,13 +54,10 @@ def crawl_internal_links(start_url, max_links=100):
                     new_internal_links, new_external_links = get_internal_links(current_link, domain)
                     links_to_visit.update(new_internal_links - {link_info['link'] for link_info in visited_links})
                     all_external_links.update(new_external_links)
-                    
-                    # Add a small delay to be respectful to the server
-                    time.sleep(1)
+                    time.sleep(2)
                 except requests.RequestException as e:
                     print(f"Request failed for {current_link}: {e}")
-                    visited_links.append({'link': current_link, 'status_code': 'Error'})
-            
+                    visited_links.append({'link': current_link, 'status_code': 'Error'})            
             count += 1
         except Exception as e:
             print(f"Error processing links: {e}")
@@ -70,10 +67,8 @@ def crawl_internal_links(start_url, max_links=100):
     return visited_links, all_external_links
 
 def save_links_to_files(internal_links, external_links):
-    # Ensure the directory exists
     output_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    # Save internal links
+
     internal_file_path = os.path.join(output_dir, 'internal_links.txt')
     try:
         with open(internal_file_path, 'w', encoding='utf-8') as file:
@@ -86,8 +81,7 @@ def save_links_to_files(internal_links, external_links):
         print(f"Internal links saved to: {internal_file_path}")
     except Exception as e:
         print(f"Error saving internal links: {e}")
-    
-    # Save external links
+
     external_file_path = os.path.join(output_dir, 'external_links.txt')
     try:
         with open(external_file_path, 'w', encoding='utf-8') as file:
@@ -107,5 +101,4 @@ if __name__ == "__main__":
         save_links_to_files(all_internal_links, all_external_links)
     except Exception as e:
         print(f"An error occurred during execution: {e}")
-        # Create empty files even if there's an error
         save_links_to_files([], [])
