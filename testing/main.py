@@ -4,7 +4,6 @@ import urllib.parse
 import time
 import os
 import json
-import threading
 def get_internal_links(url, domain):
     internal_links = set()
     external_links = set()
@@ -26,6 +25,16 @@ def get_internal_links(url, domain):
     except requests.RequestException as e:
         print(f"Request failed for {url}: {e}")
     return internal_links, external_links
+
+def get_page_title(url):
+    try:
+        response = requests.get(url, timeout=10)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        title_tag = soup.find('title')
+        return title_tag.get_text().strip() if title_tag else "[No Title]"
+    except requests.RequestException as e:
+        print(f"Failed to fetch title for {url}: {e}")
+        return "[No Title]"
 def crawl_internal_links(start_url, max_links=100):
     print(f"Starting crawl from: {start_url}")
     domain = start_url
@@ -46,7 +55,8 @@ def crawl_internal_links(start_url, max_links=100):
             'link': start_url, 
             'status_code': response.status_code,
             'anchor_text': "Start URL",
-            'source_url': "N/A"
+            'source_url': "N/A",
+            'title': get_page_title(start_url)
         })
     except requests.RequestException as e:
         print(f"Request failed for start URL: {e}")
@@ -54,7 +64,8 @@ def crawl_internal_links(start_url, max_links=100):
             'link': start_url, 
             'status_code': 'Error',
             'anchor_text': "Start URL",
-            'source_url': "N/A"
+            'source_url': "N/A",
+            'title': get_page_title(start_url)
         })    
     count = 0
     while links_to_visit and count < max_links:
@@ -71,7 +82,8 @@ def crawl_internal_links(start_url, max_links=100):
                         'link': current_link, 
                         'status_code': status_code,
                         'anchor_text': anchor_text,
-                        'source_url': source_url
+                        'source_url': source_url,
+                        'title': get_page_title(current_link)
                     })                    
                     new_internal_links, new_external_links = get_internal_links(current_link, domain)                    
                     for link_url, anchor_text, source_url in new_internal_links:
@@ -88,7 +100,8 @@ def crawl_internal_links(start_url, max_links=100):
                         'link': current_link, 
                         'status_code': 'Error',
                         'anchor_text': anchor_text,
-                        'source_url': source_url
+                        'source_url': source_url,
+                        'title': "[No Title]"
                     })            
             count += 1
         except Exception as e:
@@ -104,7 +117,8 @@ def save_links_to_files(internal_links, external_links):
             "url": link_info['link'],
             "status code": link_info['status_code'],
             "link text": link_info['anchor_text'],
-            "found on": link_info['source_url']
+            "found on": link_info['source_url'],
+            "title": link_info['title']
         }
     internal_file_path = os.path.join(output_dir, 'internal_links.json')
     try:
@@ -140,8 +154,8 @@ def save_links_to_files(internal_links, external_links):
 if __name__ == "__main__":
     start_url = str(input('Enter the URL to you want to scrap : '))
     try:
-        internal_links, external_links = crawl_internal_links(start_url, max_links=50)
-        save_links_to_files(internal_links, external_links)
+        all_internal_links, all_external_links = crawl_internal_links(start_url, max_links=50)
+        save_links_to_files(all_internal_links, all_external_links)
     except Exception as e:
         print(f"An error occurred during execution: {e}")
         save_links_to_files([], [])
