@@ -14,3 +14,4 @@ testing/external_links.json
 testing/internal_links.json
 external_links.json
 internal_links.json
+.gitignore
