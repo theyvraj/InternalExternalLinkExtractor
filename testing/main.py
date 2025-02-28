@@ -34,22 +34,13 @@ def get_internal_links(url, domain):
     except requests.RequestException as e:
         print(f"Request failed for {url}: {e}")
     return internal_links, external_links, image_count, images_without_alt
-def get_page_title(url):
-    try:
-        response = requests.get(url, timeout=10)
-        soup = BeautifulSoup(response.text, 'html.parser')
-        title_tag = soup.find('title')
-        return title_tag.get_text().strip() if title_tag else "[No Title]"
-    except requests.RequestException as e:
-        print(f"Failed to fetch title for {url}: {e}")
-        return "[No Title]"
 def get_head_data(url):
     try:
         response = requests.get(url, timeout=10)
         soup = BeautifulSoup(response.text, 'html.parser')
         head_tag = soup.find('head')
         if head_tag:            
-            head_text = head_tag.get_text(separator='\n', strip=True)            
+            title = head_tag.get_text(separator='\n', strip=True)            
             meta_data = {}
             for meta in head_tag.find_all('meta'):
                 if meta.get('name'):
@@ -57,13 +48,13 @@ def get_head_data(url):
                 elif meta.get('property'):
                     meta_data[meta.get('property')] = meta.get('content')            
             return {
-                'head_text': head_text,
+                'title': title,
                 'meta_data': meta_data
             }
-        return {"head_text": "[No Head Data]", "meta_data": {}}
+        return {"title": "[No Title]", "meta_data": {}}
     except requests.RequestException as e:
         print(f"Failed to fetch head data for {url}: {e}")
-        return {"head_text": "[Error fetching head data]", "meta_data": {}}
+        return {"title": "[Error fetching head data]", "meta_data": {}}
 def crawl_internal_links(start_url, max_links=100):
     print(f"Starting crawl from: {start_url}")
     domain = start_url
@@ -86,7 +77,6 @@ def crawl_internal_links(start_url, max_links=100):
             'status_code': response.status_code,
             'anchor_text': "Start URL",
             'source_url': "N/A",
-            'title': get_page_title(start_url),
             'image_count': image_count,
             'images_without_alt': images_without_alt,
             'head_data': head_data
@@ -98,10 +88,9 @@ def crawl_internal_links(start_url, max_links=100):
             'status_code': 'Error',
             'anchor_text': "Start URL",
             'source_url': "N/A",
-            'title': get_page_title(start_url),
             'image_count': 0,
             'images_without_alt': [],
-            'head_data': {"head_text": "[Error fetching head data]", "meta_data": {}}
+            'head_data': {"title": "[Error fetching head data]", "meta_data": {}}
         })    
     count = 0
     while links_to_visit and count < max_links:
@@ -121,7 +110,6 @@ def crawl_internal_links(start_url, max_links=100):
                         'status_code': status_code,
                         'anchor_text': anchor_text,
                         'source_url': source_url,
-                        'title': get_page_title(current_link),
                         'image_count': image_count,
                         'images_without_alt': images_without_alt,
                         'head_data': head_data
@@ -141,15 +129,14 @@ def crawl_internal_links(start_url, max_links=100):
                         'status_code': 'Error',
                         'anchor_text': anchor_text,
                         'source_url': source_url,
-                        'title': "[No Title]",
                         'image_count': 0,
                         'images_without_alt': [],
-                        'head_data': {"head_text": "[Error fetching head data]", "meta_data": {}}
+                        'head_data': {"title": "[Error fetching head data]", "meta_data": {}}
                     })            
             count += 1
         except Exception as e:
             print(f"Error processing links: {e}")
-            break    
+            break
     print(f"Crawl completed.")
     return visited_links, all_external_links
 def save_links_to_files(internal_links, external_links):
@@ -161,7 +148,6 @@ def save_links_to_files(internal_links, external_links):
             "status code": link_info['status_code'],
             "link text": link_info['anchor_text'],
             "found on": link_info['source_url'],
-            "title": link_info['title'],
             "image count": link_info['image_count'],
             "images without alt": link_info['images_without_alt'],
             "head data": link_info['head_data']
