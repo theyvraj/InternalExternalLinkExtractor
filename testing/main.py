@@ -70,7 +70,7 @@ def get_head_data(url):
     except requests.RequestException as e:
         print(f"Failed to fetch head data for {url}: {e}")
         return {"title": "[Error fetching head data]", "meta_data": {}}
-def crawl_internal_links(start_url, max_links=100):
+def crawl_links(start_url, max_links=100):
     print(f"Starting crawl from: {start_url}")
     domain = start_url
     visited_links = []
@@ -80,36 +80,7 @@ def crawl_internal_links(start_url, max_links=100):
     links_to_visit.update({link[0] for link in initial_internal_links})
     all_external_links.update(initial_external_links)    
     link_details = {}
-    for link_url, anchor_text, source_url in initial_internal_links:
-        link_details[link_url] = (anchor_text, source_url)
-    for link_url, anchor_text, source_url in initial_external_links:
-        link_details[link_url] = (anchor_text, source_url)    
-    try:
-        response = requests.get(start_url, timeout=10)
-        head_data = get_head_data(start_url)
-        heading_count = get_heading_count(start_url)
-        visited_links.append({
-            'link': start_url, 
-            'status_code': response.status_code,
-            'anchor_text': "Start URL",
-            'source_url': "N/A",
-            'image_count': image_count,
-            'images_without_alt': images_without_alt,
-            'head_data': head_data,
-            'heading_count' : heading_count
-        })
-    except requests.RequestException as e:
-        print(f"Request failed for start URL: {e}")
-        visited_links.append({
-            'link': start_url, 
-            'status_code': 'Error',
-            'anchor_text': "Start URL",
-            'source_url': "N/A",
-            'image_count': 0,
-            'images_without_alt': [],
-            'head_data': {"title": "[Error fetching head data]", "meta_data": {}},
-            'heading_count': {"title": "[Error fetching heading count data]", "meta_data": {}}
-        })
+    
     count = 0
     while links_to_visit and count < max_links:
         try:
@@ -208,7 +179,7 @@ def save_links_to_files(internal_links, external_links):
 if __name__ == "__main__":
     start_url = str(input('Enter the URL to you want to scrap : '))
     try:
-        all_internal_links, all_external_links = crawl_internal_links(start_url, max_links=50)
+        all_internal_links, all_external_links = crawl_links(start_url, max_links=50)
         save_links_to_files(all_internal_links, all_external_links)
     except Exception as e:
         print(f"An error occurred during execution: {e}")
