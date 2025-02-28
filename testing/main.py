@@ -43,6 +43,27 @@ def get_page_title(url):
     except requests.RequestException as e:
         print(f"Failed to fetch title for {url}: {e}")
         return "[No Title]"
+def get_head_data(url):
+    try:
+        response = requests.get(url, timeout=10)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        head_tag = soup.find('head')
+        if head_tag:            
+            head_text = head_tag.get_text(separator='\n', strip=True)            
+            meta_data = {}
+            for meta in head_tag.find_all('meta'):
+                if meta.get('name'):
+                    meta_data[meta.get('name')] = meta.get('content')
+                elif meta.get('property'):
+                    meta_data[meta.get('property')] = meta.get('content')            
+            return {
+                'head_text': head_text,
+                'meta_data': meta_data
+            }
+        return {"head_text": "[No Head Data]", "meta_data": {}}
+    except requests.RequestException as e:
+        print(f"Failed to fetch head data for {url}: {e}")
+        return {"head_text": "[Error fetching head data]", "meta_data": {}}
 def crawl_internal_links(start_url, max_links=100):
     print(f"Starting crawl from: {start_url}")
     domain = start_url
@@ -59,6 +80,7 @@ def crawl_internal_links(start_url, max_links=100):
         link_details[link_url] = (anchor_text, source_url)    
     try:
         response = requests.get(start_url, timeout=10)
+        head_data = get_head_data(start_url)
         visited_links.append({
             'link': start_url, 
             'status_code': response.status_code,
@@ -66,7 +88,8 @@ def crawl_internal_links(start_url, max_links=100):
             'source_url': "N/A",
             'title': get_page_title(start_url),
             'image_count': image_count,
-            'images_without_alt': images_without_alt
+            'images_without_alt': images_without_alt,
+            'head_data': head_data
         })
     except requests.RequestException as e:
         print(f"Request failed for start URL: {e}")
@@ -77,7 +100,8 @@ def crawl_internal_links(start_url, max_links=100):
             'source_url': "N/A",
             'title': get_page_title(start_url),
             'image_count': 0,
-            'images_without_alt': []
+            'images_without_alt': [],
+            'head_data': {"head_text": "[Error fetching head data]", "meta_data": {}}
         })    
     count = 0
     while links_to_visit and count < max_links:
@@ -91,6 +115,7 @@ def crawl_internal_links(start_url, max_links=100):
                     status_code = response.status_code                    
                     anchor_text, source_url = link_details.get(current_link, ("[No Text]", "Unknown")) 
                     new_internal_links, new_external_links, image_count, images_without_alt = get_internal_links(current_link, domain)
+                    head_data = get_head_data(current_link)
                     visited_links.append({  
                         'link': current_link, 
                         'status_code': status_code,
@@ -98,7 +123,8 @@ def crawl_internal_links(start_url, max_links=100):
                         'source_url': source_url,
                         'title': get_page_title(current_link),
                         'image_count': image_count,
-                        'images_without_alt': images_without_alt
+                        'images_without_alt': images_without_alt,
+                        'head_data': head_data
                     })                                        
                     for link_url, anchor_text, source_url in new_internal_links:
                         link_details[link_url] = (anchor_text, source_url)
@@ -117,7 +143,8 @@ def crawl_internal_links(start_url, max_links=100):
                         'source_url': source_url,
                         'title': "[No Title]",
                         'image_count': 0,
-                        'images_without_alt': []
+                        'images_without_alt': [],
+                        'head_data': {"head_text": "[Error fetching head data]", "meta_data": {}}
                     })            
             count += 1
         except Exception as e:
@@ -136,7 +163,8 @@ def save_links_to_files(internal_links, external_links):
             "found on": link_info['source_url'],
             "title": link_info['title'],
             "image count": link_info['image_count'],
-            "images without alt": link_info['images_without_alt']
+            "images without alt": link_info['images_without_alt'],
+            "head data": link_info['head_data']
         }
     internal_file_path = os.path.join(output_dir, 'internal_links.json')
     try:
