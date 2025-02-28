@@ -7,10 +7,19 @@ import json
 def get_internal_links(url, domain):
     internal_links = set()
     external_links = set()
+    image_count = 0
+    images_without_alt = []
     try:
         print(f"Fetching links from: {url}")
         response = requests.get(url, timeout=10)
         soup = BeautifulSoup(response.text, 'html.parser')
+        for img in soup.find_all('img'):
+            image_count += 1
+            if not img.get('alt') or img.get('alt').strip() == '':
+                img_src = img.get('src', '')
+                if img_src:
+                    full_img_src = urllib.parse.urljoin(domain, img_src)
+                    images_without_alt.append(full_img_src)
         for link in soup.find_all('a', href=True):
             href = link.get('href')
             if '#' in href:
@@ -24,8 +33,7 @@ def get_internal_links(url, domain):
         print(f"Found {len(internal_links)} internal links and {len(external_links)} external links")
     except requests.RequestException as e:
         print(f"Request failed for {url}: {e}")
-    return internal_links, external_links
-
+    return internal_links, external_links, image_count, images_without_alt
 def get_page_title(url):
     try:
         response = requests.get(url, timeout=10)
@@ -41,7 +49,7 @@ def crawl_internal_links(start_url, max_links=100):
     visited_links = []
     all_external_links = set()
     links_to_visit = set()    
-    initial_internal_links, initial_external_links = get_internal_links(start_url, domain)
+    initial_internal_links, initial_external_links, image_count, images_without_alt = get_internal_links(start_url, domain)
     links_to_visit.update({link[0] for link in initial_internal_links})
     all_external_links.update(initial_external_links)    
     link_details = {}
@@ -56,7 +64,9 @@ def crawl_internal_links(start_url, max_links=100):
             'status_code': response.status_code,
             'anchor_text': "Start URL",
             'source_url': "N/A",
-            'title': get_page_title(start_url)
+            'title': get_page_title(start_url),
+            'image_count': image_count,
+            'images_without_alt': images_without_alt
         })
     except requests.RequestException as e:
         print(f"Request failed for start URL: {e}")
@@ -65,27 +75,31 @@ def crawl_internal_links(start_url, max_links=100):
             'status_code': 'Error',
             'anchor_text': "Start URL",
             'source_url': "N/A",
-            'title': get_page_title(start_url)
+            'title': get_page_title(start_url),
+            'image_count': 0,
+            'images_without_alt': []
         })    
     count = 0
     while links_to_visit and count < max_links:
         try:
             current_link = links_to_visit.pop()
             print(f"Processing link {count+1}/{max_links}: {current_link}")          
-            visited_urls = {link_info['link'] for link_info in visited_links}            
+            visited_urls = {link_info['link'] for link_info in visited_links}          
             if current_link not in visited_urls:
                 try:
                     response = requests.get(current_link, timeout=10)
                     status_code = response.status_code                    
-                    anchor_text, source_url = link_details.get(current_link, ("[No Text]", "Unknown"))                    
+                    anchor_text, source_url = link_details.get(current_link, ("[No Text]", "Unknown")) 
+                    new_internal_links, new_external_links, image_count, images_without_alt = get_internal_links(current_link, domain)
                     visited_links.append({  
                         'link': current_link, 
                         'status_code': status_code,
                         'anchor_text': anchor_text,
                         'source_url': source_url,
-                        'title': get_page_title(current_link)
-                    })                    
-                    new_internal_links, new_external_links = get_internal_links(current_link, domain)                    
+                        'title': get_page_title(current_link),
+                        'image_count': image_count,
+                        'images_without_alt': images_without_alt
+                    })                                        
                     for link_url, anchor_text, source_url in new_internal_links:
                         link_details[link_url] = (anchor_text, source_url)
                     for link_url, anchor_text, source_url in new_external_links:
@@ -101,13 +115,15 @@ def crawl_internal_links(start_url, max_links=100):
                         'status_code': 'Error',
                         'anchor_text': anchor_text,
                         'source_url': source_url,
-                        'title': "[No Title]"
+                        'title': "[No Title]",
+                        'image_count': 0,
+                        'images_without_alt': []
                     })            
             count += 1
         except Exception as e:
             print(f"Error processing links: {e}")
             break    
-    print(f"Crawl completed. Visited {len(visited_links)} internal links and found {len(all_external_links)} external links.")
+    print(f"Crawl completed.")
     return visited_links, all_external_links
 def save_links_to_files(internal_links, external_links):
     output_dir = os.path.dirname(os.path.abspath(__file__))
@@ -118,7 +134,9 @@ def save_links_to_files(internal_links, external_links):
             "status code": link_info['status_code'],
             "link text": link_info['anchor_text'],
             "found on": link_info['source_url'],
-            "title": link_info['title']
+            "title": link_info['title'],
+            "image count": link_info['image_count'],
+            "images without alt": link_info['images_without_alt']
         }
     internal_file_path = os.path.join(output_dir, 'internal_links.json')
     try:
