@@ -86,17 +86,18 @@ def get_link_data(soup, domain, url):
                     if head_response.status_code >= 400:
                         with threading.Lock():
                             results["broken"].add((full_url, anchor_text, url))
+                    else:
+                        # Only add to internal/external if not broken
+                        if domain in full_url:
+                            with threading.Lock():
+                                results["internal"].add((full_url, anchor_text, url))
+                                results["in_page"].add(full_url)
+                        else:
+                            with threading.Lock():
+                                results["external"].add((full_url, anchor_text, url))
                 except requests.RequestException:
                     with threading.Lock():
                         results["broken"].add((full_url, anchor_text, url))
-                
-                if domain in full_url:
-                    with threading.Lock():
-                        results["internal"].add((full_url, anchor_text, url))
-                        results["in_page"].add(full_url)
-                else:
-                    with threading.Lock():
-                        results["external"].add((full_url, anchor_text, url))
             except Exception as e:
                 logger.error(f"Error processing link: {e}")
             finally:
@@ -221,6 +222,20 @@ def process_url(current_link, start_url, link_details, visited_pages_lock, visit
         return
     
     try:
+        # First check if the link is accessible before attempting to crawl
+        try:
+            head_response = requests.head(current_link, timeout=5)
+            if head_response.status_code >= 400:
+                logger.warning(f"Skipping broken link: {current_link} (Status: {head_response.status_code})")
+                with visited_pages_lock:
+                    all_broken_links.add((current_link, link_details.get(current_link, ("[No Text]", "Unknown"))[0], link_details.get(current_link, ("[No Text]", "Unknown"))[1]))
+                return
+        except requests.RequestException as e:
+            logger.warning(f"Skipping broken link: {current_link} (Error: {e})")
+            with visited_pages_lock:
+                all_broken_links.add((current_link, link_details.get(current_link, ("[No Text]", "Unknown"))[0], link_details.get(current_link, ("[No Text]", "Unknown"))[1]))
+            return
+            
         link_data = get_page_data(current_link, start_url)
         (page_status_code, internal_links, external_links, broken_links, 
             images_data, head_data, headings_data, 
@@ -266,6 +281,8 @@ def process_url(current_link, start_url, link_details, visited_pages_lock, visit
                 
     except requests.RequestException as e:
         logger.error(f"Request failed for {current_link}: {e}")
+        with visited_pages_lock:
+            all_broken_links.add((current_link, link_details.get(current_link, ("[No Text]", "Unknown"))[0], link_details.get(current_link, ("[No Text]", "Unknown"))[1]))
 
 def crawl_internal_links(start_url, max_links=100, max_threads=10):
     start_url = normalize_url(start_url)
@@ -276,9 +293,16 @@ def crawl_internal_links(start_url, max_links=100, max_threads=10):
     try:
         response = requests.get(start_url, timeout=8)
         status_code = response.status_code
+        
+        # Check if the start URL is accessible
+        if status_code >= 400:
+            logger.error(f"Start URL returns error status code: {status_code}")
+            return status_code, domain, start_url, []
+            
     except requests.RequestException as e:
         logger.error(f"Request failed for start URL {start_url}: {e}")
-        status_code = "Error"    
+        status_code = "Error"
+        return status_code, domain, start_url, []
     
     # Thread-safe collections
     visited_links = []  # List of visited pages and their data
