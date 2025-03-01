@@ -4,6 +4,10 @@ import urllib.parse
 import time
 import os
 import json
+def normalize_url(url):
+    if url.endswith('/'):
+        url = url[:-1]
+    return url
 
 def check_url(start_url, current_url):
     start_netloc = urllib.parse.urlparse(start_url).netloc
@@ -48,6 +52,7 @@ def get_link_data(soup, domain, url):
             continue            
         anchor_text = link.get_text().strip() or "N/A"
         full_url = urllib.parse.urljoin(domain, href)
+        full_url = normalize_url(full_url)
         try:
             head_response = requests.head(full_url, timeout=5)
             if head_response.status_code >= 400:
@@ -123,6 +128,7 @@ def count_words(soup):
     return "0"
 
 def get_page_data(url, domain):
+    url = normalize_url(url)
     internal_links = set()
     external_links = set()
     broken_links = set()
@@ -160,6 +166,7 @@ def format_links_data(links):
     return result
 
 def crawl_internal_links(start_url, max_links=100):
+    start_url = normalize_url(start_url)
     print(f"Starting crawl from: {start_url}")
     domain = urllib.parse.urlparse(start_url).netloc
     status_code = 200
@@ -179,6 +186,7 @@ def crawl_internal_links(start_url, max_links=100):
     link_details[start_url] = ("[Start Page]", "")   
     while links_to_visit and count < max_links:
         current_link = links_to_visit.pop()
+        current_link = normalize_url(current_link)
         if check_url(start_url, current_link):
             try:
                 link_data = get_page_data(current_link, start_url)
@@ -200,10 +208,11 @@ def crawl_internal_links(start_url, max_links=100):
                     'broken': formatted_broken_links,
                     'word_count': word_count,
                     'images': images_data
-                }                
+                }
                 visited_links.append(page_data)                
                 for link_url, anchor_text, source_url in internal_links:
-                    if link_url not in link_details:
+                    normalized_link_url = normalize_url(link_url)
+                    if normalized_link_url not in link_details:
                         link_details[link_url] = (anchor_text, source_url)
                         links_to_visit.add(link_url)               
                 all_external_links.update(external_links)
@@ -219,6 +228,7 @@ def crawl_internal_links(start_url, max_links=100):
 
 if __name__ == "__main__":
     start_url = str(input('Enter the URL to you want to scrape: '))
+    start_url = normalize_url(start_url)
     try:
         status_code, domain, url, all_pages = crawl_internal_links(start_url, max_links=50)
         output_data = {
