@@ -4,6 +4,15 @@ import urllib.parse
 import time
 import os
 import json
+import threading
+from queue import Queue
+from concurrent.futures import ThreadPoolExecutor
+import logging
+
+# Set up basic logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
 def normalize_url(url):
     if url.endswith('/'):
         url = url[:-1]
@@ -46,26 +55,66 @@ def get_link_data(soup, domain, url):
     external_links = set()
     broken_links = set()
     links_in_page = set()    
+    
+    # Create a thread-safe collection for links
+    link_queue = Queue()
+    results = {
+        "internal": set(),
+        "external": set(),
+        "broken": set(),
+        "in_page": set()
+    }
+    
+    # Add all links to the queue
     for link in soup.find_all('a', href=True):
         href = link.get('href')
         if '#' in href:
             continue            
-        anchor_text = link.get_text().strip() or "N/A"
-        full_url = urllib.parse.urljoin(domain, href)
-        full_url = normalize_url(full_url)
-        try:
-            head_response = requests.head(full_url, timeout=5)
-            if head_response.status_code >= 400:
-                broken_links.add((full_url, anchor_text, url))
-        except requests.RequestException:
-            broken_links.add((full_url, anchor_text, url))
-            
-        if domain in full_url:
-            internal_links.add((full_url, anchor_text, url))
-            links_in_page.add(full_url)
-        else:
-            external_links.add((full_url, anchor_text, url))
-    return internal_links, external_links, broken_links, links_in_page
+        link_queue.put((href, link))
+    
+    # Worker function to process links
+    def process_link():
+        while not link_queue.empty():
+            try:
+                href, link = link_queue.get(block=False)
+                anchor_text = link.get_text().strip() or "N/A"
+                full_url = urllib.parse.urljoin(domain, href)
+                full_url = normalize_url(full_url)
+                
+                try:
+                    head_response = requests.head(full_url, timeout=5)
+                    if head_response.status_code >= 400:
+                        with threading.Lock():
+                            results["broken"].add((full_url, anchor_text, url))
+                except requests.RequestException:
+                    with threading.Lock():
+                        results["broken"].add((full_url, anchor_text, url))
+                
+                if domain in full_url:
+                    with threading.Lock():
+                        results["internal"].add((full_url, anchor_text, url))
+                        results["in_page"].add(full_url)
+                else:
+                    with threading.Lock():
+                        results["external"].add((full_url, anchor_text, url))
+            except Exception as e:
+                logger.error(f"Error processing link: {e}")
+            finally:
+                link_queue.task_done()
+    
+    # Use threads to process links in parallel
+    threads = []
+    for _ in range(min(10, link_queue.qsize())):  # Use up to 10 threads
+        thread = threading.Thread(target=process_link)
+        thread.daemon = True
+        thread.start()
+        threads.append(thread)
+    
+    # Wait for all threads to complete
+    for thread in threads:
+        thread.join()
+    
+    return results["internal"], results["external"], results["broken"], results["in_page"]
 
 def get_head_data(soup):
     meta_title = {"content": "", "valid": False, "errors": [], "warnings": [], "length": 0}
@@ -139,7 +188,7 @@ def get_page_data(url, domain):
     links_in_page = set()
     word_count = "0"    
     try:
-        print(f"Fetching data from: {url}")
+        logger.info(f"Fetching data from: {url}")
         response = requests.get(url, timeout=8)
         status_code = response.status_code
         soup = BeautifulSoup(response.text, 'html.parser')        
@@ -148,10 +197,10 @@ def get_page_data(url, domain):
         head_data = get_head_data(soup)
         headings_data = get_heading_data(soup)
         word_count = count_words(soup)        
-        print(f"Found {len(internal_links)} internal links and {len(external_links)} external links")
-        print(f"Found {images_data['total_images']} images, {images_data['images_without_alt']} without alt text")
+        logger.info(f"[{url}] Found {len(internal_links)} internal links and {len(external_links)} external links")
+        logger.info(f"[{url}] Found {images_data['total_images']} images, {images_data['images_without_alt']} without alt text")
     except requests.RequestException as e:
-        print(f"Request failed for {url}: {e}")    
+        logger.error(f"Request failed for {url}: {e}")    
     return [
         status_code, internal_links, external_links, broken_links, 
         images_data, head_data, headings_data, links_in_page, word_count
@@ -165,81 +214,154 @@ def format_links_data(links):
         result[link_url].append(anchor_text)
     return result
 
-def crawl_internal_links(start_url, max_links=100):
+def process_url(current_link, start_url, link_details, visited_pages_lock, visited_links, all_external_links, all_broken_links, links_to_visit, links_to_visit_lock):
+    current_link = normalize_url(current_link)
+    if not check_url(start_url, current_link):
+        logger.info(f"Skipping external link: {current_link}")
+        return
+    
+    try:
+        link_data = get_page_data(current_link, start_url)
+        (page_status_code, internal_links, external_links, broken_links, 
+            images_data, head_data, headings_data, 
+            links_in_page, word_count) = link_data                
+        
+        default_link_info = ("[No Text]", "Unknown")
+        link_info = link_details.get(current_link, default_link_info)
+        
+        formatted_external_links = format_links_data(external_links)
+        formatted_internal_links = format_links_data(internal_links)
+        formatted_broken_links = format_links_data(broken_links)                
+        
+        page_data = {
+            'page_url': current_link,
+            'meta_title': head_data.get('meta_title', {}),
+            'meta_description': head_data.get('meta_description', {}),
+            'headings': headings_data,
+            'external': formatted_external_links,
+            'internal': formatted_internal_links,
+            'broken': formatted_broken_links,
+            'word_count': word_count,
+            'images': images_data
+        }
+        
+        with visited_pages_lock:
+            visited_links.append(page_data)                
+            
+            # Add new internal links to the queue
+            with links_to_visit_lock:
+                for link_url, anchor_text, source_url in internal_links:
+                    normalized_link_url = normalize_url(link_url)
+                    
+                    # Check if we've already visited this link or have it in our queue
+                    already_visited = any(page['page_url'] == normalized_link_url for page in visited_links)
+                    
+                    if not already_visited and normalized_link_url not in link_details:
+                        link_details[normalized_link_url] = (anchor_text, source_url)
+                        links_to_visit.add(normalized_link_url)
+                        
+            # Update our collections of external and broken links
+            all_external_links.update(external_links)
+            all_broken_links.update(broken_links)
+                
+    except requests.RequestException as e:
+        logger.error(f"Request failed for {current_link}: {e}")
+
+def crawl_internal_links(start_url, max_links=100, max_threads=10):
     start_url = normalize_url(start_url)
-    print(f"Starting crawl from: {start_url}")
+    logger.info(f"Starting crawl from: {start_url}")
     domain = urllib.parse.urlparse(start_url).netloc
     status_code = 200
+    
     try:
         response = requests.get(start_url, timeout=8)
         status_code = response.status_code
     except requests.RequestException as e:
-        print(f"Request failed for start URL {start_url}: {e}")
+        logger.error(f"Request failed for start URL {start_url}: {e}")
         status_code = "Error"    
-    visited_links = []
-    links_to_visit = set()
-    link_details = {}
+    
+    # Thread-safe collections
+    visited_links = []  # List of visited pages and their data
+    links_to_visit = set()  # Set of links to visit
+    link_details = {}  # Dictionary of link details
+    all_external_links = set()  # Set of all external links
+    all_broken_links = set()  # Set of all broken links
+    
+    # Locks for shared resources
+    visited_pages_lock = threading.Lock()
+    links_to_visit_lock = threading.Lock()
+    
     links_to_visit.add(start_url)
-    all_external_links = set()
-    all_broken_links = set()
-    count = 0
-    link_details[start_url] = ("[Start Page]", "")   
-    while links_to_visit and count < max_links:
-        current_link = links_to_visit.pop()
-        current_link = normalize_url(current_link)
-        if check_url(start_url, current_link):
-            try:
-                link_data = get_page_data(current_link, start_url)
-                (page_status_code, internal_links, external_links, broken_links, 
-                 images_data, head_data, headings_data, 
-                 links_in_page, word_count) = link_data                
-                default_link_info = ("[No Text]", "Unknown")
-                link_info = link_details.get(current_link, default_link_info)
-                formatted_external_links = format_links_data(external_links)
-                formatted_internal_links = format_links_data(internal_links)
-                formatted_broken_links = format_links_data(broken_links)                
-                page_data = {
-                    'page_url': current_link,
-                    'meta_title': head_data.get('meta_title', {}),
-                    'meta_description': head_data.get('meta_description', {}),
-                    'headings': headings_data,
-                    'external': formatted_external_links,
-                    'internal': formatted_internal_links,
-                    'broken': formatted_broken_links,
-                    'word_count': word_count,
-                    'images': images_data
-                }
-                visited_links.append(page_data)                
-                for link_url, anchor_text, source_url in internal_links:
-                    normalized_link_url = normalize_url(link_url)
-                    if normalized_link_url not in link_details:
-                        link_details[link_url] = (anchor_text, source_url)
-                        links_to_visit.add(link_url)               
-                all_external_links.update(external_links)
-                all_broken_links.update(broken_links)
-                count += 1
-                time.sleep(2)
-            except requests.RequestException as e:
-                print(f"Request failed for {current_link}: {e}")
-        else:
-            print(f"Skipping external link: {current_link}")   
-    print(f"Crawl completed.")
+    link_details[start_url] = ("[Start Page]", "")
+    
+    with ThreadPoolExecutor(max_workers=max_threads) as executor:
+        while links_to_visit and len(visited_links) < max_links:
+            # Get the next batch of URLs to process
+            with links_to_visit_lock:
+                batch_size = min(max_threads, len(links_to_visit), max_links - len(visited_links))
+                if batch_size <= 0:
+                    break
+                    
+                current_batch = []
+                for _ in range(batch_size):
+                    if not links_to_visit:
+                        break
+                    current_link = links_to_visit.pop()
+                    current_batch.append(current_link)
+            
+            # Process the batch in parallel
+            futures = []
+            for link in current_batch:
+                future = executor.submit(
+                    process_url, 
+                    link, 
+                    start_url, 
+                    link_details, 
+                    visited_pages_lock, 
+                    visited_links, 
+                    all_external_links, 
+                    all_broken_links, 
+                    links_to_visit, 
+                    links_to_visit_lock
+                )
+                futures.append(future)
+            
+            # Wait for all URLs in this batch to be processed
+            for future in futures:
+                future.result()
+                
+            # Rate limiting
+            time.sleep(0.5)  # Reduced from 2 seconds since we're processing in parallel
+    
+    logger.info(f"Crawl completed. Processed {len(visited_links)} pages.")
     return status_code, domain, start_url, visited_links
 
 if __name__ == "__main__":
     start_url = str(input('Enter the URL to you want to scrape: '))
     start_url = normalize_url(start_url)
+    
+    # Optional parameters
+    max_links = 50  # Maximum number of pages to crawl
+    max_threads = 5  # Maximum number of concurrent threads
+    
     try:
-        status_code, domain, url, all_pages = crawl_internal_links(start_url, max_links=50)
+        status_code, domain, url, all_pages = crawl_internal_links(
+            start_url, 
+            max_links=max_links, 
+            max_threads=max_threads
+        )
+        
         output_data = {
             "status": status_code,
             "domain": domain,
             "url": url,
             "pages": all_pages
         }        
+        
         output_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'site_data.json')
         with open(output_file_path, 'w', encoding='utf-8') as output_file:
             json.dump(output_data, output_file, indent=4)        
-        print(f"Site data saved to: {output_file_path}")        
+        
+        logger.info(f"Site data saved to: {output_file_path}")        
     except Exception as e:
-        print(f"An error occurred during execution: {e}")
+        logger.error(f"An error occurred during execution: {e}")
