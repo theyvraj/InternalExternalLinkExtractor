@@ -4,10 +4,12 @@ import urllib.parse
 import time
 import os
 import json
+
 def check_url(start_url, current_url):
     start_netloc = urllib.parse.urlparse(start_url).netloc
     current_netloc = urllib.parse.urlparse(current_url).netloc
     return start_netloc == current_netloc
+
 def get_img_data(soup, domain):
     image_count = 0
     images_without_alt = set()   
@@ -19,26 +21,42 @@ def get_img_data(soup, domain):
                 full_img_src = urllib.parse.urljoin(domain, img_src)
                 images_without_alt.add(full_img_src)
     return image_count, images_without_alt
+
 def get_link_data(soup, domain, url):
     internal_links = set()
     external_links = set()
+    broken_links = set()
     links_in_page = set()
+    
     for link in soup.find_all('a', href=True):
         href = link.get('href')
         if '#' in href:
             continue            
-        anchor_text = link.get_text().strip() or "[No Text]"
+        anchor_text = link.get_text().strip() or "N/A"
         full_url = urllib.parse.urljoin(domain, href)
+        
+        try:
+            head_response = requests.head(full_url, timeout=5)
+            if head_response.status_code >= 400:
+                broken_links.add((full_url, anchor_text, url))
+        except requests.RequestException:
+            broken_links.add((full_url, anchor_text, url))
+            
         if domain in full_url:
             internal_links.add((full_url, anchor_text, url))
             links_in_page.add(full_url)
         else:
             external_links.add((full_url, anchor_text, url))    
-    return internal_links, external_links, links_in_page
+            
+    return internal_links, external_links, broken_links, links_in_page
+
 def get_head_data(soup):
-    head_data = {"title": "[No Title]", "meta_data": {}}
+    meta_title = {"content": "", "valid": False, "errors": [], "warnings": [], "length": 0}
+    meta_description = {"content": "", "valid": False, "errors": [], "warnings": [], "length": 0}
+    
     head_tag = soup.find('head')
     if head_tag:            
+        # Get meta title data
         title = head_tag.find('title')
         title_text = title.get_text() if title else "[No Title]"
         meta_data = {}
