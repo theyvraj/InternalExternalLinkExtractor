@@ -134,7 +134,7 @@ def get_page_data(url, domain):
     word_count = "0"    
     try:
         print(f"Fetching data from: {url}")
-        response = requests.get(url, timeout=10)
+        response = requests.get(url, timeout=8)
         status_code = response.status_code
         soup = BeautifulSoup(response.text, 'html.parser')        
         images_data = get_img_data(soup, domain)
@@ -164,7 +164,7 @@ def crawl_internal_links(start_url, max_links=100):
     domain = urllib.parse.urlparse(start_url).netloc
     status_code = 200
     try:
-        response = requests.get(start_url, timeout=10)
+        response = requests.get(start_url, timeout=8)
         status_code = response.status_code
     except requests.RequestException as e:
         print(f"Request failed for start URL {start_url}: {e}")
