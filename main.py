@@ -14,8 +14,7 @@ def get_img_data(soup, domain):
     total_images = 0
     images_with_alt = 0
     images_without_alt = 0
-    images_without_alt_details = []
-    
+    images_without_alt_details = []    
     for img in soup.find_all('img'):
         total_images += 1
         img_src = img.get('src', '')
@@ -29,23 +28,20 @@ def get_img_data(soup, domain):
         "missing_alt_text": images_without_alt,
         "message": f"We found {total_images} images on your page, and {images_without_alt} of them are missing the alt attribute.",
         "images_without_alt_details": images_without_alt_details
-    }
-    
+    }    
     images_data = {
         "total_images": total_images,
         "images_with_alt": images_with_alt,
         "images_without_alt": images_without_alt,
         "alt_text_analysis": alt_text_analysis
-    }
-    
+    }    
     return images_data
 
 def get_link_data(soup, domain, url):
     internal_links = set()
     external_links = set()
     broken_links = set()
-    links_in_page = set()
-    
+    links_in_page = set()    
     for link in soup.find_all('a', href=True):
         href = link.get('href')
         if '#' in href:
@@ -63,14 +59,12 @@ def get_link_data(soup, domain, url):
             internal_links.add((full_url, anchor_text, url))
             links_in_page.add(full_url)
         else:
-            external_links.add((full_url, anchor_text, url))    
-            
+            external_links.add((full_url, anchor_text, url))
     return internal_links, external_links, broken_links, links_in_page
 
 def get_head_data(soup):
     meta_title = {"content": "", "valid": False, "errors": [], "warnings": [], "length": 0}
-    meta_description = {"content": "", "valid": False, "errors": [], "warnings": [], "length": 0}
-    
+    meta_description = {"content": "", "valid": False, "errors": [], "warnings": [], "length": 0}    
     head_tag = soup.find('head')
     if head_tag:
         title = head_tag.find('title')
@@ -99,8 +93,7 @@ def get_head_data(soup):
             meta_description["errors"].append("Meta description is missing")
     else:
         meta_title["errors"].append("Head tag is missing")
-        meta_description["errors"].append("Head tag is missing")
-    
+        meta_description["errors"].append("Head tag is missing")    
     return {
         "meta_title": meta_title,
         "meta_description": meta_description
@@ -119,8 +112,7 @@ def get_heading_data(soup):
         headings["valid"] = False
     elif heading_count['h1_count'] > 1:
         headings["warnings"].append(f"Multiple H1 headings found ({heading_count['h1_count']})")
-    headings.update(heading_count)
-    
+    headings.update(heading_count)    
     return headings
 
 def count_words(soup):
@@ -139,25 +131,21 @@ def get_page_data(url, domain):
     headings_data = {}
     status_code = 'Error'
     links_in_page = set()
-    word_count = "0"
-    
+    word_count = "0"    
     try:
         print(f"Fetching data from: {url}")
         response = requests.get(url, timeout=10)
         status_code = response.status_code
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
+        soup = BeautifulSoup(response.text, 'html.parser')        
         images_data = get_img_data(soup, domain)
         internal_links, external_links, broken_links, links_in_page = get_link_data(soup, domain, url)
         head_data = get_head_data(soup)
         headings_data = get_heading_data(soup)
-        word_count = count_words(soup)
-        
+        word_count = count_words(soup)        
         print(f"Found {len(internal_links)} internal links and {len(external_links)} external links")
         print(f"Found {images_data['total_images']} images, {images_data['images_without_alt']} without alt text")
     except requests.RequestException as e:
         print(f"Request failed for {url}: {e}")    
-    
     return [
         status_code, internal_links, external_links, broken_links, 
         images_data, head_data, headings_data, links_in_page, word_count
@@ -180,8 +168,7 @@ def crawl_internal_links(start_url, max_links=100):
         status_code = response.status_code
     except requests.RequestException as e:
         print(f"Request failed for start URL {start_url}: {e}")
-        status_code = "Error"
-    
+        status_code = "Error"    
     visited_links = []
     links_to_visit = set()
     link_details = {}
@@ -189,8 +176,7 @@ def crawl_internal_links(start_url, max_links=100):
     all_external_links = set()
     all_broken_links = set()
     count = 0
-    link_details[start_url] = ("[Start Page]", "")    
-    
+    link_details[start_url] = ("[Start Page]", "")   
     while links_to_visit and count < max_links:
         current_link = links_to_visit.pop()
         if check_url(start_url, current_link):
@@ -198,14 +184,12 @@ def crawl_internal_links(start_url, max_links=100):
                 link_data = get_page_data(current_link, start_url)
                 (page_status_code, internal_links, external_links, broken_links, 
                  images_data, head_data, headings_data, 
-                 links_in_page, word_count) = link_data
-                
+                 links_in_page, word_count) = link_data                
                 default_link_info = ("[No Text]", "Unknown")
                 link_info = link_details.get(current_link, default_link_info)
                 formatted_external_links = format_links_data(external_links)
                 formatted_internal_links = format_links_data(internal_links)
-                formatted_broken_links = format_links_data(broken_links)
-                
+                formatted_broken_links = format_links_data(broken_links)                
                 page_data = {
                     'page_url': current_link,
                     'meta_title': head_data.get('meta_title', {}),
@@ -216,15 +200,12 @@ def crawl_internal_links(start_url, max_links=100):
                     'broken': formatted_broken_links,
                     'word_count': word_count,
                     'images': images_data
-                }
-                
-                visited_links.append(page_data)
-                
+                }                
+                visited_links.append(page_data)                
                 for link_url, anchor_text, source_url in internal_links:
                     if link_url not in link_details:
                         link_details[link_url] = (anchor_text, source_url)
-                        links_to_visit.add(link_url)                
-                
+                        links_to_visit.add(link_url)               
                 all_external_links.update(external_links)
                 all_broken_links.update(broken_links)
                 count += 1
@@ -232,8 +213,7 @@ def crawl_internal_links(start_url, max_links=100):
             except requests.RequestException as e:
                 print(f"Request failed for {current_link}: {e}")
         else:
-            print(f"Skipping external link: {current_link}")    
-    
+            print(f"Skipping external link: {current_link}")   
     print(f"Crawl completed.")
     return status_code, domain, start_url, visited_links
 
@@ -246,13 +226,10 @@ if __name__ == "__main__":
             "domain": domain,
             "url": url,
             "pages": all_pages
-        }
-        
+        }        
         output_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'site_data.json')
         with open(output_file_path, 'w', encoding='utf-8') as output_file:
-            json.dump(output_data, output_file, indent=4)
-        
-        print(f"Site data saved to: {output_file_path}")
-        
+            json.dump(output_data, output_file, indent=4)        
+        print(f"Site data saved to: {output_file_path}")        
     except Exception as e:
         print(f"An error occurred during execution: {e}")
