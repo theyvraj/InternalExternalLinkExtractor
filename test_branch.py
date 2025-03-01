@@ -10,18 +10,19 @@ def check_url(start_url, current_url):
     return start_netloc == current_netloc
 def get_img_data(soup, domain):
     image_count = 0
-    images_without_alt = []    
+    images_without_alt = set()   
     for img in soup.find_all('img'):
         image_count += 1
         if not img.get('alt') or img.get('alt').strip() == '':
             img_src = img.get('src', '')
             if img_src:
                 full_img_src = urllib.parse.urljoin(domain, img_src)
-                images_without_alt.append(full_img_src)    
+                images_without_alt.add(full_img_src)
     return image_count, images_without_alt
 def get_link_data(soup, domain, url):
     internal_links = set()
-    external_links = set()    
+    external_links = set()
+    links_in_page = set()
     for link in soup.find_all('a', href=True):
         href = link.get('href')
         if '#' in href:
@@ -29,10 +30,11 @@ def get_link_data(soup, domain, url):
         anchor_text = link.get_text().strip() or "[No Text]"
         full_url = urllib.parse.urljoin(domain, href)
         if domain in full_url:
-            internal_links.add((full_url, anchor_text, url))  
+            internal_links.add((full_url, anchor_text, url))
+            links_in_page.add(full_url)
         else:
             external_links.add((full_url, anchor_text, url))    
-    return internal_links, external_links
+    return internal_links, external_links, links_in_page
 def get_head_data(soup):
     head_data = {"title": "[No Title]", "meta_data": {}}
     head_tag = soup.find('head')
@@ -59,24 +61,25 @@ def get_page_data(url, domain):
     internal_links = set()
     external_links = set()
     image_count = 0
-    images_without_alt = []
+    images_without_alt = {}
     head_data = {"title": "[No Title]", "meta_data": {}}
     heading_count = {'h1': 0, 'h2': 0, 'h3': 0, 'h4': 0, 'h5': 0, 'h6': 0}
-    status_code = 'Error'    
+    status_code = 'Error'
+    links_in_page = set()
     try:
         print(f"Fetching data from: {url}")
         response = requests.get(url, timeout=10)
         status_code = response.status_code
         soup = BeautifulSoup(response.text, 'html.parser')
         image_count, images_without_alt = get_img_data(soup, domain)
-        internal_links, external_links = get_link_data(soup, domain, url)
+        internal_links, external_links, links_in_page = get_link_data(soup, domain, url)
         head_data = get_head_data(soup)
         heading_count = get_heading_count(soup)        
         print(f"Found {len(internal_links)} internal links and {len(external_links)} external links")        
     except requests.RequestException as e:
         print(f"Request failed for {url}: {e}")    
     return [
-        status_code, internal_links, external_links, image_count, images_without_alt, head_data, heading_count
+        status_code, internal_links, external_links, image_count, images_without_alt, head_data, heading_count, links_in_page
         ]
 def crawl_internal_links(start_url, max_links=100):
     print(f"Starting crawl from: {start_url}")
@@ -92,7 +95,7 @@ def crawl_internal_links(start_url, max_links=100):
         if check_url(start_url, current_link):
             try:
                 link_data = get_page_data(current_link, start_url)
-                status_code, internal_links, external_links, image_count, images_without_alt, head_data, heading_count = link_data
+                status_code, internal_links, external_links, image_count, images_without_alt, head_data, heading_count, links_in_page = link_data
                 default_link_info = ("[No Text]", "Unknown")
                 link_info = link_details.get(current_link, default_link_info)                
                 visited_links.append({
@@ -100,8 +103,9 @@ def crawl_internal_links(start_url, max_links=100):
                     'status_code': status_code,
                     'anchor_text': link_info[0],
                     'source_url': link_info[1],
+                    'internal_links_on_page' : list(links_in_page),
                     'image_count': image_count,
-                    'images_without_alt': images_without_alt,
+                    'images_without_alt': list(images_without_alt),
                     'head_data': head_data,
                     'heading_count': heading_count
                 })                
@@ -125,6 +129,7 @@ def prepare_internal_links_dict(internal_links):
             "url": link_info['link'],
             "status code": link_info['status_code'],
             "link text": link_info['anchor_text'],
+            "links in this page": link_info['internal_links_on_page'],
             "found on": link_info['source_url'],
             "image count": link_info['image_count'],
             "images without alt": link_info['images_without_alt'],
