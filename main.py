@@ -22,7 +22,7 @@ def get_img_data(soup, domain):
         if img_src:
             if not img.get('alt') or img.get('alt').strip() == '':
                 images_without_alt += 1
-                images_without_alt_details.append({"url" : img_src})
+                images_without_alt_details.append(img_src + "\n")
             else:
                 images_with_alt += 1
     alt_text_analysis = {
