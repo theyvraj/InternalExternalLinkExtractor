@@ -20,21 +20,9 @@ def get_img_data(soup, domain):
         total_images += 1
         img_src = img.get('src', '')
         if img_src:
-            full_img_src = urllib.parse.urljoin(domain, img_src)
             if not img.get('alt') or img.get('alt').strip() == '':
                 images_without_alt += 1
-                try:
-                    size_kb = 0
-                    head_response = requests.head(full_img_src, timeout=5)
-                    if 'content-length' in head_response.headers:
-                        size_kb = round(int(head_response.headers['content-length']) / 1024)
-                except:
-                    size_kb = 0
-                
-                images_without_alt_details.append({
-                    "url": img_src,
-                    "size_kb": size_kb
-                })
+                images_without_alt_details.append({"url" : img_src})
             else:
                 images_with_alt += 1
     alt_text_analysis = {
