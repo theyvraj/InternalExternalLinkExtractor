@@ -1,0 +1,2888 @@
+{
+    "status": 200,
+    "domain": "portyourdoc.com",
+    "url": "https://portyourdoc.com/",
+    "pages": [
+        {
+            "page_url": "https://portyourdoc.com/",
+            "meta_title": {
+                "content": "PortYourDOC: Free File Converter",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 32
+            },
+            "meta_description": {
+                "content": "Manage, convert, and optimize your documents efficiently with PortYourDOC. Easily convert PDFs and other file formats with our user-friendly free file converter.",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 161
+            },
+            "headings": {
+                "h1": [
+                    "Convert your Documents Effortlessly"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "h1_count": 1,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to DOC",
+                    "PDF to Word"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/contact-us": [
+                    "Get Connected Now!"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ]
+            },
+            "broken": {},
+            "word_count": "400",
+            "images": {
+                "total_images": 10,
+                "images_with_alt": 2,
+                "images_without_alt": 8,
+                "alt_text_analysis": {
+                    "missing_alt_text": 8,
+                    "message": "We found 10 images on your page, and 8 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/arrow-work.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/arrow-work.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/arrow-work.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/fearture1.svg",
+                            "size_kb": 2
+                        },
+                        {
+                            "url": "/static/images/feature2.svg",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/feature3.svg",
+                            "size_kb": 2
+                        },
+                        {
+                            "url": "/static/images/feature4.svg",
+                            "size_kb": 2
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/compress-pdf",
+            "meta_title": {
+                "content": "Compress PDF: Online PDF Compression with PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 53
+            },
+            "meta_description": {
+                "content": "Compress PDF files online for free with PortYourDOC. Reduce file size quickly without losing quality. Effortless PDF compression with our free tool.",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 148
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to DOC",
+                    "PDF to Word"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ]
+            },
+            "broken": {},
+            "word_count": "712",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/blogs/",
+            "meta_title": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta title is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 4,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/post/best-tools-to-easily-convert-tiff-to-webp-features-and-comparisons/": [
+                    "Best Tools to Easily Convert TIFF to WebP Image Format",
+                    "Read More"
+                ],
+                "https://portyourdoc.com/post/how-do-you-optimize-your-raw-images-for-the-web-using-webp-format/": [
+                    "Optimize Your RAW Images for the Web Using WebP Format",
+                    "Read More"
+                ],
+                "https://portyourdoc.com/post/why-you-should-convert-tiff-to-gif-for-web-usage/": [
+                    "Read More",
+                    "Convert TIFF to GIF: The Essential Guide for Image Conversion"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/post/how-to-convert-raw-to-png-a-complete-guide-for-beginners/": [
+                    "Convert RAW to PNG: A Complete Guide for Beginners",
+                    "Read More"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ]
+            },
+            "broken": {},
+            "word_count": "346",
+            "images": {
+                "total_images": 6,
+                "images_with_alt": 5,
+                "images_without_alt": 1,
+                "alt_text_analysis": {
+                    "missing_alt_text": 1,
+                    "message": "We found 6 images on your page, and 1 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/post/why-you-should-convert-tiff-to-gif-for-web-usage/",
+            "meta_title": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta title is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [
+                    "Convert TIFF to GIF: The Essential Guide for Image Conversion"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "h1_count": 1,
+                "h2_count": 8,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Contact Us",
+                    "Customer Support",
+                    "Help"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/tiff-to-gif/": [
+                    "TIFF to GIF",
+                    "Tiff to GIF"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ]
+            },
+            "broken": {},
+            "word_count": "877",
+            "images": {
+                "total_images": 3,
+                "images_with_alt": 2,
+                "images_without_alt": 1,
+                "alt_text_analysis": {
+                    "missing_alt_text": 1,
+                    "message": "We found 3 images on your page, and 1 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/pdf-to-jpg",
+            "meta_title": {
+                "content": "PDF to JPG Converter: Convert PDF to JPG with PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 57
+            },
+            "meta_description": {
+                "content": "Convert PDF to JPG easily with PortYourDOC free tool. Change PDF files to JPG format quickly and efficiently with our PDF to JPG converter. Try it today!",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 153
+            },
+            "headings": {
+                "h1": [
+                    "Convert The Comprehensive Pages Into JPG With PortYourDoc"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "h1_count": 1,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Contact Us",
+                    "Customer Support",
+                    "Help"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ]
+            },
+            "broken": {},
+            "word_count": "670",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/pdf-to-doc",
+            "meta_title": {
+                "content": "PDF to DOC Converter: Convert Documents with PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 56
+            },
+            "meta_description": {
+                "content": "Convert PDF to DOC quickly and easily with PortYourDOC PDF to DOC converter. Transform PDFs into editable DOC files with precision and ease. Try free tool now!",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 159
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Contact Us",
+                    "Customer Support",
+                    "Help"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ]
+            },
+            "broken": {},
+            "word_count": "752",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/text-to-speech",
+            "meta_title": {
+                "content": "PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [
+                    "Meta title is too short (< 30 characters)"
+                ],
+                "length": 11
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 1,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 2,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Customer Support",
+                    "Help",
+                    "Contact Us"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "N/A",
+                    "Home"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ]
+            },
+            "broken": {},
+            "word_count": "174",
+            "images": {
+                "total_images": 2,
+                "images_with_alt": 1,
+                "images_without_alt": 1,
+                "alt_text_analysis": {
+                    "missing_alt_text": 1,
+                    "message": "We found 2 images on your page, and 1 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/post/how-to-convert-raw-to-png-a-complete-guide-for-beginners/",
+            "meta_title": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta title is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [
+                    "Convert RAW to PNG: A Complete Guide for Beginners"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "h1_count": 1,
+                "h2_count": 3,
+                "h3_count": 7,
+                "h4_count": 1,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "N/A",
+                    "Home",
+                    "PortYourDoc.",
+                    "PortYourDoc"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/raw-to-png/": [
+                    "RAW to PNG"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ]
+            },
+            "broken": {},
+            "word_count": "950",
+            "images": {
+                "total_images": 3,
+                "images_with_alt": 2,
+                "images_without_alt": 1,
+                "alt_text_analysis": {
+                    "missing_alt_text": 1,
+                    "message": "We found 3 images on your page, and 1 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/tiff-to-gif/",
+            "meta_title": {
+                "content": "TIF to GIF: Convert TIF to GIF Images with PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 54
+            },
+            "meta_description": {
+                "content": "Convert TIFF to GIF in seconds! PortYourDOC tool makes it simple to convert TIFF files into GIFs, perfect for enhancing your design projects with ease.",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 151
+            },
+            "headings": {
+                "h1": [
+                    "Did You Hear?",
+                    "TIFF to GIF conversions are no longer a tough job!"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [
+                    "Multiple H1 headings found (2)"
+                ],
+                "h1_count": 2,
+                "h2_count": 0,
+                "h3_count": 5,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Customer Support",
+                    "Help",
+                    "Contact Us"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ]
+            },
+            "broken": {},
+            "word_count": "647",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/conditions/",
+            "meta_title": {
+                "content": "PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [
+                    "Meta title is too short (< 30 characters)"
+                ],
+                "length": 11
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ]
+            },
+            "broken": {},
+            "word_count": "449",
+            "images": {
+                "total_images": 2,
+                "images_with_alt": 1,
+                "images_without_alt": 1,
+                "alt_text_analysis": {
+                    "missing_alt_text": 1,
+                    "message": "We found 2 images on your page, and 1 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/protect-pdf",
+            "meta_title": {
+                "content": "Password Protect PDF: Secure PDFs with PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 50
+            },
+            "meta_description": {
+                "content": "Protect PDF files with a password using PortYourDOC tool. Easily add a password to keep your files secure and private from unauthorized access.",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 143
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "N/A",
+                    "Home"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ]
+            },
+            "broken": {},
+            "word_count": "678",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/split-pdf",
+            "meta_title": {
+                "content": "Split PDF Free online with PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 38
+            },
+            "meta_description": {
+                "content": "Need to split PDF free online? PortYourDOC provides a free, straightforward way to separate your document by pages or multiple PDFs\u2014quick and simple!",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 149
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/contact-us/": [
+                    "Contact Us",
+                    "Customer Support",
+                    "Help"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ]
+            },
+            "broken": {},
+            "word_count": "683",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/all-tools/",
+            "meta_title": {
+                "content": "PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [
+                    "Meta title is too short (< 30 characters)"
+                ],
+                "length": 11
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [
+                    "All Available Tools"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "h1_count": 1,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Contact Us",
+                    "Customer Support",
+                    "Help"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ]
+            },
+            "broken": {},
+            "word_count": "165",
+            "images": {
+                "total_images": 2,
+                "images_with_alt": 1,
+                "images_without_alt": 1,
+                "alt_text_analysis": {
+                    "missing_alt_text": 1,
+                    "message": "We found 2 images on your page, and 1 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/merge-pdf",
+            "meta_title": {
+                "content": "PortYourDOC: Free File Converter",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 32
+            },
+            "meta_description": {
+                "content": "Manage, convert, and optimize your documents efficiently with PortYourDOC. Easily convert PDFs and other file formats with our user-friendly free file converter.",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 161
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ]
+            },
+            "broken": {},
+            "word_count": "337",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/contact-us/",
+            "meta_title": {
+                "content": "Contact",
+                "valid": true,
+                "errors": [],
+                "warnings": [
+                    "Meta title is too short (< 30 characters)"
+                ],
+                "length": 7
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {
+                "https://twitter.com": [
+                    "N/A"
+                ],
+                "https://instagram.com": [
+                    "N/A"
+                ],
+                "https://youtube.com": [
+                    "N/A"
+                ],
+                "https://facebook.com": [
+                    "N/A"
+                ]
+            },
+            "internal": {
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to DOC",
+                    "PDF to Word"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ]
+            },
+            "broken": {
+                "https://twitter.com": [
+                    "N/A"
+                ]
+            },
+            "word_count": "212",
+            "images": {
+                "total_images": 3,
+                "images_with_alt": 1,
+                "images_without_alt": 2,
+                "alt_text_analysis": {
+                    "missing_alt_text": 2,
+                    "message": "We found 3 images on your page, and 2 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/contact-img.png",
+                            "size_kb": 30
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/contact-us",
+            "meta_title": {
+                "content": "Contact",
+                "valid": true,
+                "errors": [],
+                "warnings": [
+                    "Meta title is too short (< 30 characters)"
+                ],
+                "length": 7
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {
+                "https://facebook.com": [
+                    "N/A"
+                ],
+                "https://twitter.com": [
+                    "N/A"
+                ],
+                "https://instagram.com": [
+                    "N/A"
+                ],
+                "https://youtube.com": [
+                    "N/A"
+                ]
+            },
+            "internal": {
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Customer Support",
+                    "Help",
+                    "Contact Us"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ]
+            },
+            "broken": {
+                "https://twitter.com": [
+                    "N/A"
+                ]
+            },
+            "word_count": "212",
+            "images": {
+                "total_images": 3,
+                "images_with_alt": 1,
+                "images_without_alt": 2,
+                "alt_text_analysis": {
+                    "missing_alt_text": 2,
+                    "message": "We found 3 images on your page, and 2 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/contact-img.png",
+                            "size_kb": 30
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/extract-assets",
+            "meta_title": {
+                "content": "PortYourDOC: Free File Converter",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 32
+            },
+            "meta_description": {
+                "content": "Manage, convert, and optimize your documents efficiently with PortYourDOC. Easily convert PDFs and other file formats with our user-friendly free file converter.",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 161
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Customer Support",
+                    "Help",
+                    "Contact Us"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ]
+            },
+            "broken": {},
+            "word_count": "330",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/policies/",
+            "meta_title": {
+                "content": "PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [
+                    "Meta title is too short (< 30 characters)"
+                ],
+                "length": 11
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "N/A",
+                    "Home",
+                    "https://portyourdoc.com/"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ]
+            },
+            "broken": {},
+            "word_count": "511",
+            "images": {
+                "total_images": 2,
+                "images_with_alt": 1,
+                "images_without_alt": 1,
+                "alt_text_analysis": {
+                    "missing_alt_text": 1,
+                    "message": "We found 2 images on your page, and 1 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/unlock-pdf",
+            "meta_title": {
+                "content": "PortYourDOC: Free File Converter",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 32
+            },
+            "meta_description": {
+                "content": "Manage, convert, and optimize your documents efficiently with PortYourDOC. Easily convert PDFs and other file formats with our user-friendly free file converter.",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 161
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 0,
+                "h3_count": 3,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ]
+            },
+            "broken": {},
+            "word_count": "326",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/post/how-do-you-optimize-your-raw-images-for-the-web-using-webp-format/",
+            "meta_title": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta title is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [
+                    "Optimize Your RAW Images for the Web Using WebP Format"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "h1_count": 1,
+                "h2_count": 2,
+                "h3_count": 5,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A",
+                    "Port Your Doc"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Customer Support",
+                    "Help",
+                    "Contact Us"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/raw-to-webp/": [
+                    "\"Port Your Doc",
+                    "RAW to WebP"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ]
+            },
+            "broken": {},
+            "word_count": "913",
+            "images": {
+                "total_images": 3,
+                "images_with_alt": 2,
+                "images_without_alt": 1,
+                "alt_text_analysis": {
+                    "missing_alt_text": 1,
+                    "message": "We found 3 images on your page, and 1 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/raw-to-png/",
+            "meta_title": {
+                "content": "RAW to PNG: Convert RAW to PNG Images with PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 54
+            },
+            "meta_description": {
+                "content": "Convert RAW to PNG with PortYourDOC free online tool. Transform RAW files to PNG format quickly for professional-quality results and seamless workflow.",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 151
+            },
+            "headings": {
+                "h1": [
+                    "RAW to PNG: Experience the Quickest Conversions"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "h1_count": 1,
+                "h2_count": 0,
+                "h3_count": 6,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Customer Support",
+                    "Help",
+                    "Contact Us"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "N/A",
+                    "Home"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ]
+            },
+            "broken": {},
+            "word_count": "702",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/raw-to-webp/",
+            "meta_title": {
+                "content": "RAW to WebP Converter: Convert Image free with PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 58
+            },
+            "meta_description": {
+                "content": "Convert RAW to WebP online with PrtYourDOC. Enjoy quick and reliable RAW to WebP conversion for optimized image performance.",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 124
+            },
+            "headings": {
+                "h1": [
+                    "RAW to WebP Converter- Convert Unprocessed data in an Optimized Format"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "h1_count": 1,
+                "h2_count": 0,
+                "h3_count": 5,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/contact-us/": [
+                    "Customer Support",
+                    "Help",
+                    "Contact Us"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "N/A",
+                    "Home"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ]
+            },
+            "broken": {},
+            "word_count": "697",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/transcribe-audio",
+            "meta_title": {
+                "content": "PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [
+                    "Meta title is too short (< 30 characters)"
+                ],
+                "length": 11
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [],
+                "valid": false,
+                "errors": [
+                    "No H1 heading found"
+                ],
+                "warnings": [],
+                "h1_count": 0,
+                "h2_count": 1,
+                "h3_count": 4,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ]
+            },
+            "broken": {},
+            "word_count": "167",
+            "images": {
+                "total_images": 2,
+                "images_with_alt": 1,
+                "images_without_alt": 1,
+                "alt_text_analysis": {
+                    "missing_alt_text": 1,
+                    "message": "We found 2 images on your page, and 1 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/post/best-tools-to-easily-convert-tiff-to-webp-features-and-comparisons/",
+            "meta_title": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta title is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "meta_description": {
+                "content": "",
+                "valid": false,
+                "errors": [
+                    "Meta description is missing"
+                ],
+                "warnings": [],
+                "length": 0
+            },
+            "headings": {
+                "h1": [
+                    "Best Tools to Easily Convert TIFF to WebP Image Format"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "h1_count": 1,
+                "h2_count": 4,
+                "h3_count": 9,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Contact Us",
+                    "Customer Support",
+                    "Help"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/": [
+                    "Port Your Doc",
+                    "Home",
+                    "N/A",
+                    "Port Your Doc's"
+                ],
+                "https://portyourdoc.com/tiff-to-webp/": [
+                    "Convert TIFF to WebP",
+                    "TIFF to WebP",
+                    "TIFF to WebP,"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ],
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ]
+            },
+            "broken": {},
+            "word_count": "760",
+            "images": {
+                "total_images": 3,
+                "images_with_alt": 2,
+                "images_without_alt": 1,
+                "alt_text_analysis": {
+                    "missing_alt_text": 1,
+                    "message": "We found 3 images on your page, and 1 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "page_url": "https://portyourdoc.com/tiff-to-webp/",
+            "meta_title": {
+                "content": "TIFF to WebP: Convert WebP to GIF with PortYourDOC",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 50
+            },
+            "meta_description": {
+                "content": "PortYourDOC simplifies TIFF to WebP conversion. Convert TIFF to WebP file format online free, easily and enhance your image efficiency today!",
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "length": 141
+            },
+            "headings": {
+                "h1": [
+                    "TIFF to WebP Converter: Experience Conversions Like Never Before"
+                ],
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "h1_count": 1,
+                "h2_count": 0,
+                "h3_count": 5,
+                "h4_count": 0,
+                "h5_count": 0,
+                "h6_count": 0
+            },
+            "external": {},
+            "internal": {
+                "https://portyourdoc.com/pdf-to-doc": [
+                    "PDF to Word",
+                    "PDF to DOC"
+                ],
+                "https://portyourdoc.com/contact-us/": [
+                    "Help",
+                    "Contact Us",
+                    "Customer Support"
+                ],
+                "https://portyourdoc.com/text-to-speech": [
+                    "Text to Speech"
+                ],
+                "https://portyourdoc.com/protect-pdf": [
+                    "Protect PDF"
+                ],
+                "https://portyourdoc.com/extract-assets": [
+                    "Extract Assests"
+                ],
+                "https://portyourdoc.com/conditions/": [
+                    "Terms & Conditions"
+                ],
+                "https://portyourdoc.com/all-tools/": [
+                    "All Tools"
+                ],
+                "https://portyourdoc.com/compress-pdf": [
+                    "Compress PDF"
+                ],
+                "https://portyourdoc.com/": [
+                    "Home",
+                    "N/A"
+                ],
+                "https://portyourdoc.com/policies/": [
+                    "Privacy Policy"
+                ],
+                "https://portyourdoc.com/pdf-to-jpg": [
+                    "PDF to JPG"
+                ],
+                "https://portyourdoc.com/merge-pdf": [
+                    "Merge PDF"
+                ],
+                "https://portyourdoc.com/blogs/": [
+                    "Blogs"
+                ],
+                "https://portyourdoc.com/split-pdf": [
+                    "Split PDF"
+                ],
+                "https://portyourdoc.com/unlock-pdf": [
+                    "Unlock PDF"
+                ],
+                "https://portyourdoc.com/transcribe-audio": [
+                    "Audio Transcription"
+                ]
+            },
+            "broken": {},
+            "word_count": "705",
+            "images": {
+                "total_images": 7,
+                "images_with_alt": 2,
+                "images_without_alt": 4,
+                "alt_text_analysis": {
+                    "missing_alt_text": 4,
+                    "message": "We found 7 images on your page, and 4 of them are missing the alt attribute.",
+                    "images_without_alt_details": [
+                        {
+                            "url": "/static/images/logo.png",
+                            "size_kb": 42
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        },
+                        {
+                            "url": "/static/images/Vector.png",
+                            "size_kb": 1
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
