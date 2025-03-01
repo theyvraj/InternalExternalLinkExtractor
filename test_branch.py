@@ -86,8 +86,7 @@ def crawl_internal_links(start_url, max_links=100):
     links_to_visit.add(start_url)
     all_external_links = set()
     count = 0
-    link_details[start_url] = ("[Start Page]", "")
-    
+    link_details[start_url] = ("[Start Page]", "")    
     while links_to_visit and count < max_links:
         current_link = links_to_visit.pop()
         if check_url(start_url, current_link):
@@ -119,8 +118,7 @@ def crawl_internal_links(start_url, max_links=100):
             print(f"Skipping external link: {current_link}")    
     print(f"Crawl completed.")
     return visited_links, all_external_links
-def save_links_to_files(internal_links, external_links):
-    output_dir = os.path.dirname(os.path.abspath(__file__))
+def prepare_internal_links_dict(internal_links):
     internal_links_dict = {}
     for i, link_info in enumerate(internal_links, 1):
         internal_links_dict[f"link_{i}"] = {
@@ -133,16 +131,8 @@ def save_links_to_files(internal_links, external_links):
             "head data": link_info['head_data'],
             "heading count": link_info['heading_count']
         }
-    internal_file_path = os.path.join(output_dir, 'internal_links.json')
-    try:
-        with open(internal_file_path, 'w', encoding='utf-8') as file:
-            if not internal_links:
-                json.dump({"message": "No internal links found."}, file, indent=4)
-            else:
-                json.dump(internal_links_dict, file, indent=4)
-        print(f"Internal links saved to: {internal_file_path}")
-    except Exception as e:
-        print(f"Error saving internal links: {e}")    
+    return internal_links_dict
+def prepare_external_links_dict(external_links):
     unique_external_urls = {}
     for link_url, anchor_text, source_url in external_links:
         if link_url not in unique_external_urls:
@@ -153,22 +143,21 @@ def save_links_to_files(internal_links, external_links):
             "url": link_url,
             "link text": anchor_text,
             "found on": source_url
-        }    
-    external_file_path = os.path.join(output_dir, 'external_links.json')
-    try:
-        with open(external_file_path, 'w', encoding='utf-8') as file:
-            if not unique_external_urls:
-                json.dump({"message": "No external links found."}, file, indent=4)
-            else:
-                json.dump(external_links_dict, file, indent=4)
-        print(f"External links saved to: {external_file_path}")
-    except Exception as e:
-        print(f"Error saving external links: {e}")
+        }
+    return external_links_dict
 if __name__ == "__main__":
     start_url = str(input('Enter the URL to you want to scrap : '))
     try:
         all_internal_links, all_external_links = crawl_internal_links(start_url, max_links=50)
-        save_links_to_files(all_internal_links, all_external_links)
+        internal_links_dict = prepare_internal_links_dict(all_internal_links)
+        external_links_dict = prepare_external_links_dict(all_external_links)
+        internal_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'internal_links.json')
+        with open(internal_file_path, 'w', encoding='utf-8') as internal_file:
+            json.dump(internal_links_dict, internal_file, indent=4)
+        print(f"Internal links saved to: {internal_file_path}")
+        external_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'external_links.json')
+        with open(external_file_path, 'w', encoding='utf-8') as external_file:
+            json.dump(external_links_dict, external_file, indent=4)
+        print(f"External links saved to: {external_file_path}")
     except Exception as e:
         print(f"An error occurred during execution: {e}")
-        save_links_to_files([], [])
